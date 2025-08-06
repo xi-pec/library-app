@@ -13,7 +13,7 @@ export default function WelcomePage() {
 
                 <p className="text-default-800">
                     To get started, enter your information in the next page. 
-                    This can be updated later.
+                    This can be updated later (by clicking the cog icon on the top right corner of the home page).
                 </p>
             </div>
             
