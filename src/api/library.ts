@@ -32,7 +32,8 @@ export async function submit(data: UserData, temperature: number) {
       url: `https://docs.google.com/forms/u/0/d/e/${constants.formId}/formResponse`,
       headers: { "Content-type": "application/x-www-form-urlencoded" },
       data: Object.entries(formdata).map(([k, v]) => `${encodeURI(k)}=${encodeURI(v.split(" ").join("+"))}`).join("&"),
-      dataType: "formData"
+      dataType: "formData",
+      connectTimeout: 5000
     })
     
     return response.status == 200
