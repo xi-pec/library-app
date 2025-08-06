@@ -28,13 +28,17 @@ export async function submit(data: UserData, temperature: number) {
       [constants.mins_in]: mins.toString()
     }
 
-    let response = await CapacitorHttp.post({
-      url: `https://docs.google.com/forms/u/0/d/e/${constants.formId}/formResponse`,
-      headers: { "Content-type": "application/x-www-form-urlencoded" },
-      data: Object.entries(formdata).map(([k, v]) => `${encodeURI(k)}=${encodeURI(v.split(" ").join("+"))}`).join("&"),
-      dataType: "formData",
-      connectTimeout: 5000
-    })
-    
-    return response.status == 200
+    try {
+      let response = await CapacitorHttp.post({
+        url: `https://docs.google.com/forms/u/0/d/e/${constants.formId}/formResponse`,
+        headers: { "Content-type": "application/x-www-form-urlencoded" },
+        data: Object.entries(formdata).map(([k, v]) => `${encodeURI(k)}=${encodeURI(v.split(" ").join("+"))}`).join("&"),
+        dataType: "formData",
+        connectTimeout: 5000
+      })
+      
+      return response.status == 200
+    } catch (e) {
+      return false
+    }
   }
