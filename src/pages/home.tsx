@@ -28,7 +28,7 @@ let fakeData: UserData = {
   organization: "Pentester",
 };
 
-export default function IndexPage() {
+export default function HomePage() {
   const [closed, setClosed] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [date, setDate] = useState(new Date(Date.now()));
