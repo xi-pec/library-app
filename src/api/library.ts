@@ -4,11 +4,7 @@ import constants from "@/config/constants";
 
 export interface UserData {
   email: string;
-  name: {
-    given: string;
-    initials: string;
-    family: string;
-  };
+  name: string;
   role: "Student" | "Teacher/Staff" | "Visitor";
   organization: string;
 }
@@ -20,7 +16,7 @@ export async function submit(data: UserData, temperature: number) {
 
   let formdata = {
     [constants.email]: data.email,
-    [constants.name]: `${data.name.family}, ${data.name.given}, ${data.name.initials}`,
+    [constants.name]: data.name,
     [constants.role]: data.role,
     [constants.organization]: data.organization,
     [constants.temperature]: temperature.toFixed(1),

@@ -19,11 +19,7 @@ import DefaultLayout from "@/layouts/default";
 
 let fakeData: UserData = {
   email: "hello@example.com",
-  name: {
-    given: "John",
-    initials: "D.C.",
-    family: "Doe",
-  },
+  name: "Doe, John D.C.",
   role: "Visitor",
   organization: "Pentester",
 };
