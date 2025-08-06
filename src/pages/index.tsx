@@ -18,7 +18,7 @@ export default function IndexPage() {
       var { success } = z.object({
         email: z.email(),
         name: z.string(),
-        role: z.string(),
+        role: z.string().refine((role) => ["Student", "Teacher/Staff", "Visitor"].includes(role)),
         organization: z.string()
       }).safeParse(JSON.parse(value ?? "{}"))
 

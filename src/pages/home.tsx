@@ -1,3 +1,4 @@
+import DefaultLayout from "@/layouts/default";
 import { UserData, submit } from "@/api/library";
 
 import { Button } from "@heroui/button"
@@ -15,14 +16,8 @@ import { Card, CardBody } from "@heroui/card";
 import { Divider } from "@heroui/divider";
 
 import { useEffect, useState } from "react";
-import DefaultLayout from "@/layouts/default";
-
-let fakeData: UserData = {
-  email: "hello@example.com",
-  name: "Doe, John D.C.",
-  role: "Visitor",
-  organization: "Pentester",
-};
+import { z } from "zod"
+import { Preferences } from "@capacitor/preferences";
 
 export default function HomePage() {
   const [closed, setClosed] = useState(false);
@@ -31,12 +26,25 @@ export default function HomePage() {
   const [temperature, setTemperature] = useState(36.0);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  async function log(data: UserData, temperature: number) {
+  async function log(temperature: number) {
     setDisabled(true);
-    const success = await submit(data, temperature);
+
+    const { value } = await Preferences.get({ key: "userdata" })
+    if (!value) return addToast({ title: "Missing user data!", color: "danger", variant: "solid" })
+  
+    var validation = z.object({
+      email: z.email(),
+      name: z.string(),
+      role: z.string().refine((role) => ["Student", "Teacher/Staff", "Visitor"].includes(role)),
+      organization: z.string()
+    }).safeParse(JSON.parse(value ?? "{}"))
+
+    if (!validation.success) return addToast({ title: "Malformed user data!", color: "danger", variant: "solid" })
+
+    const success = await submit(validation.data as UserData, temperature);
 
     addToast({
-      title: success ? "Success" : "Failed",
+      title: success ? "Success!" : "Failed!",
       color: success ? "success" : "danger",
       variant: "solid",
     });
@@ -97,7 +105,7 @@ export default function HomePage() {
                   className="w-full"
                   color="primary"
                   isDisabled={disabled}
-                  onPress={() => log(fakeData, temperature).then(onClose)}
+                  onPress={() => log(temperature).then(onClose)}
                 >
                   Submit
                 </Button>
