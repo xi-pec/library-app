@@ -109,7 +109,7 @@ export default function IndexPage() {
           <Divider />
           <Card className="w-full mt-5">
             <CardBody className="justify-between">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-[1fr_auto]">
                 <div className="w-full justify-end align-middle">
                   <div className="flex flex-col gap-1 items-start justify-center">
                     <h4 className="text-small ml-2 font-semibold text-default-600">Library</h4>
