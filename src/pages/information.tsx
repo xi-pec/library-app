@@ -96,6 +96,7 @@ export default function InformationPage() {
                         labelPlacement="outside"
                         placeholder="Choose your role"
                         value={role}
+                        selectedKeys={[role]}
                         onChange={(e) => setRole(e.target.value)}
                     >
                         {["Student", "Teacher/Staff", "Visitor"].map((item) => (
