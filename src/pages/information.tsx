@@ -56,7 +56,7 @@ export default function InformationPage() {
                 <Form onSubmit={update}>
                     <Input
                         isRequired
-                        label="Full name"
+                        label="Full name (FN, LN, MI)"
                         labelPlacement="outside"
                         placeholder="Enter your full name"
                         value={name}
