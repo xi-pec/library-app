@@ -13,6 +13,7 @@
   "dependencies": {
     "@capacitor/android": "^7.4.2",
     "@capacitor/core": "^7.4.2",
+    "@capacitor/preferences": "^7.0.2",
     "@heroui/button": "^2.2.24",
     "@heroui/card": "^2.2.23",
     "@heroui/divider": "^2.2.17",
@@ -34,7 +35,8 @@
     "react-dom": "18.3.1",
     "react-router-dom": "6.23.0",
     "tailwind-variants": "2.0.1",
-    "tailwindcss": "4.1.11"
+    "tailwindcss": "4.1.11",
+    "zod": "^4.0.15"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.2",
