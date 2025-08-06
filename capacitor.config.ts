@@ -1,15 +1,15 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'com.xipec.library',
-  appName: 'CBZRC Library',
-  webDir: 'dist',
+  appId: "com.xipec.library",
+  appName: "CBZRC Library",
+  webDir: "dist",
 
   plugins: {
     CapacitorHttp: {
-      enabled: true
-    }
-  }
+      enabled: true,
+    },
+  },
 };
 
 export default config;

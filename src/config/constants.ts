@@ -10,7 +10,6 @@
 //   mins_in: "entry.2098260905_minute"
 // }
 
-
 // FAKE CONSTANTS
 export default {
   formId: "1FAIpQLSebpb35NduxtbiXd3j2tkxem4sHKWCZzsPI-2tQwSOs7dN92A",
@@ -20,5 +19,5 @@ export default {
   organization: "entry.1800708313",
   temperature: "entry.974719816",
   hour_in: "entry.2106352473_hour",
-  mins_in: "entry.2106352473_minute"
-}
+  mins_in: "entry.2106352473_minute",
+};
