@@ -3,13 +3,19 @@ This is a mobile application designed to make library attendance in PSHS-CBZRC a
 Made with React, Tailwind, Capacitor, HeroUI, and 12 hours of continuous programming.
 
 # How to install?
-## Prerequisites
+
+## Download official builds
+Get the latest official releases [here](https://github.com/xi-pec/library-app/releases/).
+
+## Build from source
+
+### Prerequisites
 - npm
 - git (optional)
 - Android Studio (for android)
 - Xcode (for iOS)
 
-## Initial setup
+### Initial setup
 Clone the repository using:
 ```sh
 git clone https://github.com/xi-pec/library-app
@@ -22,7 +28,7 @@ npm install
 npm run build
 ```
 
-## Android
+### Android
 Sync and initialize the Android platform using:
 ```sh
 npx cap sync
@@ -35,7 +41,7 @@ npx cap open android
 ```
 and build the project using Android Studio.
 
-## iOS
+### iOS
 > [!CAUTION]
 > Not tested, will not provide support.
 
