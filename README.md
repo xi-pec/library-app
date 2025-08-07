@@ -1,50 +1,61 @@
-# Vite & HeroUI Template
+# What is this?
+This is a mobile application designed to make library attendance in PSHS-CBZRC a quick and easy process.
+Made with React, Tailwind, Capacitor, HeroUI, and 12 hours of continuous programming.
 
-This is a template for creating applications using Vite and HeroUI (v2).
+# How to install?
+## Prerequisites
+- npm
+- git (optional)
+- Android Studio (for android)
+- Xcode (for iOS)
 
-[Try it on CodeSandbox](https://githubbox.com/frontio-ai/vite-template)
-
-## Technologies Used
-
-- [Vite](https://vitejs.dev/guide/)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
-
-## How to Use
-
-To clone the project, run the following command:
-
-```bash
-git clone https://github.com/frontio-ai/vite-template.git
+## Initial setup
+Clone the repository using:
+```sh
+git clone https://github.com/xi-pec/library-app
 ```
+or download the source code above.
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
+Then, install the dependencies and build the app using:
+```sh
 npm install
+npm run build
 ```
 
-### Run the development server
-
-```bash
-npm run dev
+## Android
+Sync and initialize the Android platform using:
+```sh
+npx cap sync
+npx cap add android
 ```
 
-### Setup pnpm (optional)
+Then, open the generate the Android project using:
+```sh
+npx cap open android
+```
+and build the project using Android Studio.
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+## iOS
+> [!CAUTION]
+> Not tested, will not provide support.
 
-```bash
-public-hoist-pattern[]=*@heroui/*
+Install the `@capacitor/ios` package using:
+```sh
+npm install @capacitor/ios
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+Sync and initialize the iOS platform using:
+```sh
+npx cap sync
+npx cap add ios
+```
 
-## License
+Then, open the generate the iOS project using:
+```sh
+npx cap open ios
+```
+and build the project using Xcode.
 
-Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).
+# Questions
+Q: Will there be official builds of the app?  
+A: Possibly for Android, but likely not for iOS.
