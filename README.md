@@ -57,5 +57,5 @@ npx cap open ios
 and build the project using Xcode.
 
 # Questions
-Q: Will there be official builds of the app?  
-A: Possibly for Android, but likely not for iOS.
+Q: Will there be official builds of the app in iOS?  
+A: Possibly not, I don't own (and like) iOS devices.
